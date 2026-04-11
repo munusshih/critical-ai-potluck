@@ -21,25 +21,31 @@
 ## Welcome
 
 1. Hi everyone!
-2. Let's start with a group meditation to ground ourselves before we get started.
-3. Let's go around and share our names, our pronouns, where we call home. When the last time you used AI? And anything else you want to share about yourself.
+2. Let's start with a [group meditation](https://youtu.be/wE292vsJcBY?si=GFKEnlFbI-oKLZb-) to ground ourselves before we get started.
+3. Let's go around and share our names (how to pronounce them correctly!), our pronouns, where we call home. When the last time you used AI? And anything else you want to share about yourself.
 
 ---
 
 ## Ice-breaking
 
-We will be doing a lot of discussions and writing today. To get us warmed up, let's put together a playlist with our favorite songs - no rules, just songs that you love. We will play this in the background while we work. Feel free to add songs throughout the session as well.
+We will be doing a lot of discussions and writing today. To get us warmed up, let's put together [a playlist](https://open.spotify.com/playlist/1XgZ1Qry5bFx5LtYvtvlAp?si=f2cab8feab4a40af&pt=acf320118ff5d1c52e0696c0e13dd8a1) with our favorite songs - no rules, just songs that you love. We will play this in the background while we work. Feel free to add songs throughout the session as well.
 
-## Munus's monologue
+## Why we're here?
 
-(Applause)
+[This is](./#index) a monologue that I wrote to share my thoughts and feelings about AI, and to set the tone for our first session. I will read it out loud, but you can also read it here if you want.
 
 ## Free writing
+
+Let's take about 5-8 minutes to write down our thoughts about AI. You can write about anything you want, but here are some prompts to get you started:
 
 - What is on your mind about AI right now?
 - Why did you want to join this group?
 - What are you hoping to get out of it?
 - What are you worried about?
+
+We will read these our loud later! Don't worry about grammar, spelling, or anything like that. Just write whatever comes to your mind. This is a safe space, and we will not judge each other for what we write.
+
+Like a manifesto!
 
 ---
 
@@ -99,15 +105,15 @@ Anything else?
 
 Each person can offer to teach something and/or request to learn something. These become future sessions.
 
-| Name | I can teach / share |
-| ---- | ------------------- |
-|      |                     |
-|      |                     |
-|      |                     |
-|      |                     |
-|      |                     |
-|      |                     |
-|      |                     |
+| Name | I want to facilitate |
+| ---- | -------------------- |
+|      |                      |
+|      |                      |
+|      |                      |
+|      |                      |
+|      |                      |
+|      |                      |
+|      |                      |
 
 What kind of format could this take? A workshop? A presentation? A discussion? Panel Discussion? Round Table? Something else?
 Where do we want to meet for these sessions? In person? Online? Hybrid?
