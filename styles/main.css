@@ -1,0 +1,108 @@
+/* Critical AI Potluck — customize here */
+
+:root {
+    --bg: #fff;
+    --fg: #111;
+    --border: #ddd;
+    --bg-subtle: #f6f6f6;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #1a1a1a;
+        --fg: #e8e8e8;
+        --border: #444;
+        --bg-subtle: #252525;
+    }
+
+    a {
+        color: #7eb8f7;
+    }
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+    line-height: 1.65;
+    font-size: 2rem;
+    background: var(--bg);
+    color: var(--fg);
+}
+
+nav {
+    width: 140px;
+    flex-shrink: 0;
+    padding: 2em 1em;
+    border-right: 1px solid var(--border);
+}
+
+nav a {
+    display: block;
+    margin-bottom: 0.4em;
+}
+
+main {
+    padding: 2em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.2;
+    text-wrap: balance;
+}
+
+img,
+.p5-sketch canvas {
+    max-width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid var(--border);
+    padding: 0.3em 0.6em;
+}
+
+pre {
+    position: relative;
+    background: var(--bg-subtle);
+    padding: 1em;
+    overflow-x: auto;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 0.4em;
+    right: 0.5em;
+    font-size: 0.75em;
+    cursor: pointer;
+}
+
+pre:hover .copy-btn {
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    body {
+        flex-direction: column;
+    }
+
+    nav {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 1em;
+    }
+
+    main {
+        padding: 1em;
+    }
+}
