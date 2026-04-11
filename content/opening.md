@@ -1,9 +1,69 @@
-# Session 1 — Opening
+---
+title: Opening
+css: styles/opening.css
+date: April 11, 2026
+author: Munus Shih
+---
+
+```p5.js
+
+let x, y;
+let vx, vy;
+let ew = 120;
+let eh = 60;
+let col;
+
+p.setup = () => {
+p.createCanvas(400, 300);
+x = p.width / 2;
+y = p.height / 2;
+
+vx = p.random(1, 2) * (p.random() < 0.5 ? -1 : 1);
+vy = p.random(1, 2) * (p.random() < 0.5 ? -1 : 1);
+
+p.textAlign(p.CENTER, p.CENTER);
+p.textSize(20);
+
+col = p.color(255);
+};
+
+p.draw = () => {
+p.clear();
+
+x += vx;
+y += vy;
+
+let bounced = false;
+
+if (x < ew / 2 || x > p.width - ew / 2) {
+    vx *= -1;
+    vy += p.random(-0.3, 0.3);
+    bounced = true;
+}
+
+if (y < eh / 2 || y > p.height - eh / 2) {
+    vy *= -1;
+    vx += p.random(-0.3, 0.3);
+    bounced = true;
+}
+
+if (bounced) {
+    col = p.color(p.random(255), p.random(255), p.random(255));
+}
+
+p.fill(col);
+p.ellipse(x, y, ew, eh);
+
+p.textSize(32);
+p.fill(0);
+p.text("DVD", x, y);
+};
+
+```
 
 - Participants: Munus Shih, Aarushi Bapna, Avneesh Sarwate, Tanvi Sharma, Matt Martin, Arden Schager, Matias Piña Aguilera
 - April 11, Saturday, 2:00–4:30pm
 - Steuben Hall (Juliana Curran Terian Design Center), 4th floor. Big open conference room.
-- Show your ID at the first floor entrance. Take a left, elevator to the 4th floor.
 
 ---
 

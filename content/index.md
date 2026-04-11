@@ -1,6 +1,8 @@
-# Critical AI Potluck & Addiction Support Group
-
-[Started in Apr 2026, ongoing]
+---
+title: Some Thoughts on AI & This Group
+date: April 11, 2026
+author: Munus Shih
+---
 
 I’ve been missing how much I used to learn from taking classes. As a full-time teacher now, I often have to be the “lecturer,” even though I truly believe in critical pedagogy, where everyone has something to share. There’s a responsibility to hold the room in formal educational institutions, and it’s hard for me to create a space where I can just actively listen, especially when I’m also the one grading. I miss the kind of casual space where we can just sit and learn new things together.
 
@@ -20,5 +22,4 @@ The idea that people, just by being together, can make something better feels ve
 
 “The future is not something we enter. The future is something we create.” I want to take that seriously. I want to create a future where we can learn and support each other in this moment of change.
 
-_Munus Shih, Apr 2026._
 _written without LLM chatbot but proofread with Grammarly_

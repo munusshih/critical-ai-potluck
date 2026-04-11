@@ -44,6 +44,43 @@ function addCopyButtons(container) {
   });
 }
 
+// parse YAML-lite front matter (--- key: value --- blocks)
+function parseFrontMatter(text) {
+  const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/);
+  if (!match) return { data: {}, content: text };
+  const data = {};
+  for (const line of match[1].split(/\r?\n/)) {
+    const colon = line.indexOf(":");
+    if (colon === -1) continue;
+    data[line.slice(0, colon).trim()] = line.slice(colon + 1).trim();
+  }
+  return { data, content: text.slice(match[0].length) };
+}
+
+// mark the active nav link
+function setNavActive(slug) {
+  document.querySelectorAll("nav a").forEach((a) => {
+    a.toggleAttribute("aria-current", a.getAttribute("href") === `#${slug}`);
+  });
+}
+
+// inject or update a per-page <link> stylesheet
+function applyPageCSS(href) {
+  let link = document.getElementById("page-style");
+  if (!link) {
+    link = document.createElement("link");
+    link.id = "page-style";
+    link.rel = "stylesheet";
+    document.head.appendChild(link);
+  }
+  if (href) {
+    link.href = href;
+    link.disabled = false;
+  } else {
+    link.disabled = true;
+  }
+}
+
 // load content/{slug}.md into <main>
 const main = document.querySelector("main");
 
@@ -51,11 +88,23 @@ async function loadPage(slug) {
   p5Queue = [];
   const res = await fetch(`content/${slug}.md`);
   if (!res.ok) {
-    main.innerHTML = "<p>Page not found.</p>";
+    main.innerHTML = "<p>Page not found...or yet to be found.</p>";
     return;
   }
 
-  main.innerHTML = marked.parse(await res.text());
+  const { data, content } = parseFrontMatter(await res.text());
+
+  applyPageCSS(data.css || null);
+  document.title = data.title
+    ? `${data.title} — Critical AI Potluck`
+    : "Critical AI Potluck";
+  setNavActive(slug);
+
+  const headerHtml = data.title ? `<h1>${data.title}</h1>` : "";
+  const subHtml = [data.date, data.author].filter(Boolean).join(" · ");
+
+  main.innerHTML =
+    headerHtml + (subHtml ? `<p>${subHtml}</p>` : "") + marked.parse(content);
   addCopyButtons(main);
   await mermaid.run({ nodes: main.querySelectorAll(".mermaid") });
   p5Queue.forEach(({ id, code }) => new p5(new Function("p", code), id));

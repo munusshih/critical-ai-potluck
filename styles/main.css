@@ -26,25 +26,65 @@ body {
     margin: 0;
     font-family: sans-serif;
     line-height: 1.65;
-    font-size: 2rem;
     background: var(--bg);
     color: var(--fg);
 }
 
 nav {
-    width: 140px;
+    width: 180px;
     flex-shrink: 0;
     padding: 2em 1em;
     border-right: 1px solid var(--border);
+    font-family: monospace;
+    font-size: 0.85em;
+    line-height: 1.8;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    position: relative;
+    padding-left: 1.6em;
+    white-space: nowrap;
+}
+
+nav li::before {
+    content: '\251C\2500\2500\00A0';
+    position: absolute;
+    left: 0;
+    opacity: 0.4;
+}
+
+nav li:last-child::before {
+    content: '\2514\2500\2500\00A0';
+}
+
+/* nested folder indentation */
+nav ul ul {
+    margin-top: 0;
+    padding-left: 1em;
 }
 
 nav a {
-    display: block;
-    margin-bottom: 0.4em;
+    color: var(--fg);
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav a[aria-current] {
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 main {
-    padding: 2em;
+    padding: 0em 2em;
 }
 
 h1,
