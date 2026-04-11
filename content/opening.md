@@ -121,6 +121,7 @@ Let's schedule our next meeting. We can decide on the date and time that works b
 
 - Flexible time for us to build something or start any other initiative.
 - For instance, I will love if someone can make this CSS better.
+- Or if someone wants to offer a prettier domain name.
 
 ## This repository
 
