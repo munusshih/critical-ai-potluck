@@ -111,11 +111,36 @@ function applyPageJS(src) {
   document.body.appendChild(script);
 }
 
+function basename(path) {
+  const clean = path.split("?")[0].split("#")[0];
+  const parts = clean.split("/");
+  return parts[parts.length - 1] || "document.pdf";
+}
+
+function loadPDF(path) {
+  const rawPath = (path || "").trim();
+  if (!rawPath || !/\.pdf(?:$|[?#])/i.test(rawPath)) {
+    main.innerHTML =
+      "<p>Invalid PDF path. Use #assets/your-file.pdf (or #pdf=assets/your-file.pdf).</p>";
+    return;
+  }
+
+  applyPageCSS(null);
+  applyPageJS(null);
+  main.classList.add("pdf-mode");
+  setNavActive(rawPath);
+  document.title = `${basename(rawPath)} — Critical AI Potluck`;
+
+  main.innerHTML = `<iframe class="pdf-viewer" src="${rawPath}" title="PDF viewer: ${basename(rawPath)}"></iframe>`;
+  window.scrollTo(0, 0);
+}
+
 // load content/{slug}.md into <main>
 const main = document.querySelector("main");
 
 async function loadPage(slug) {
   p5Queue = [];
+  main.classList.remove("pdf-mode");
   const res = await fetch(`content/${slug}.md`);
   if (!res.ok) {
     main.innerHTML = "<p>Page not found...or yet to be found.</p>";
@@ -167,6 +192,16 @@ async function loadPage(slug) {
 }
 
 function navigate(hash) {
+  if (hash && hash.startsWith("pdf=")) {
+    loadPDF(decodeURIComponent(hash.slice(4)));
+    return;
+  }
+
+  if (hash && /\.pdf(?:$|[?#])/i.test(hash)) {
+    loadPDF(decodeURIComponent(hash));
+    return;
+  }
+
   const el = hash && document.getElementById(hash);
   if (el) {
     el.scrollIntoView({ behavior: "smooth" });

@@ -1,5 +1,5 @@
 ---
-title: Some Thoughts on AI & This Group
+title: Why we started this group?
 date: April 11, 2026
 author: Munus Shih
 ---

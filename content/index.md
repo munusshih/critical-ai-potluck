@@ -46,6 +46,12 @@ css: styles/your-page.css
 js: scripts/your-page.js
 ```
 
+- If you want a nav item that opens a PDF while keeping the nav visible, use a hash like this:
+
+```html
+<li><a href="#pdf=assets/your-file.pdf">your PDF title</a></li>
+```
+
 Checkout [template.md](./template.md) for a sample markdown file with all the features you can use.
 
 ---

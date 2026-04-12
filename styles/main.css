@@ -89,6 +89,12 @@ main {
     max-width: 900px;
 }
 
+main.pdf-mode {
+    max-width: none;
+    width: calc(100vw - 250px);
+    padding: 0;
+}
+
 h1,
 h2,
 h3,
@@ -193,6 +199,13 @@ pre:hover .copy-btn {
     white-space: nowrap;
 }
 
+.pdf-viewer {
+    width: 100%;
+    height: 100vh;
+    border: 1px solid var(--border);
+    background: #fff;
+}
+
 @media (max-width: 900px) {
     body {
         flex-direction: column;
@@ -213,9 +226,17 @@ pre:hover .copy-btn {
         padding: 1.25em;
     }
 
+    main.pdf-mode {
+        width: 100%;
+    }
+
     .page-size {
         white-space: normal;
         overflow-wrap: anywhere;
+    }
+
+    .pdf-viewer {
+        height: 70vh;
     }
 }
 
@@ -231,5 +252,9 @@ pre:hover .copy-btn {
 
     .page-size {
         text-align: left;
+    }
+
+    .pdf-viewer {
+        height: 62vh;
     }
 }
