@@ -9,11 +9,23 @@ renderer.code = ({ text, lang }) => {
     p5Queue.push({ id, code: text });
     return `<div class="p5-sketch" id="${id}"></div>`;
   }
-  const html =
-    lang && hljs.getLanguage(lang)
-      ? hljs.highlight(text, { language: lang, ignoreIllegals: true }).value
-      : hljs.highlightAuto(text).value;
-  return `<pre><code class="hljs">${html}</code></pre>`;
+  let detectedLang = (lang || "").trim();
+  let html;
+
+  if (detectedLang && hljs.getLanguage(detectedLang)) {
+    html = hljs.highlight(text, {
+      language: detectedLang,
+      ignoreIllegals: true,
+    }).value;
+  } else {
+    const auto = hljs.highlightAuto(text);
+    html = auto.value;
+    detectedLang = detectedLang || auto.language || "text";
+  }
+
+  const safeLang =
+    detectedLang.toLowerCase().replace(/[^\w.+-]/g, "") || "text";
+  return `<pre data-lang="${safeLang}"><span class="code-lang">${safeLang}</span><code class="hljs language-${safeLang}">${html}</code></pre>`;
 };
 renderer.heading = ({ text, depth }) => {
   const id = text
@@ -81,6 +93,24 @@ function applyPageCSS(href) {
   }
 }
 
+// inject or update a per-page <script> file
+function applyPageJS(src) {
+  const existing = document.getElementById("page-script");
+  if (existing) {
+    existing.remove();
+  }
+
+  if (!src) {
+    return;
+  }
+
+  const script = document.createElement("script");
+  script.id = "page-script";
+  script.src = src;
+  script.defer = true;
+  document.body.appendChild(script);
+}
+
 // load content/{slug}.md into <main>
 const main = document.querySelector("main");
 
@@ -95,6 +125,7 @@ async function loadPage(slug) {
   const { data, content } = parseFrontMatter(await res.text());
 
   applyPageCSS(data.css || null);
+  applyPageJS(data.js || null);
   document.title = data.title
     ? `${data.title} — Critical AI Potluck`
     : "Critical AI Potluck";
@@ -108,6 +139,30 @@ async function loadPage(slug) {
   addCopyButtons(main);
   await mermaid.run({ nodes: main.querySelectorAll(".mermaid") });
   p5Queue.forEach(({ id, code }) => new p5(new Function("p", code), id));
+
+  // page footer meta
+  const footerMeta = document.createElement("div");
+  footerMeta.className = "page-meta";
+
+  const editUrl = `https://github.com/munusshih/critical-ai-potluck/edit/main/content/${slug}.md`;
+  const editEl = document.createElement("p");
+  editEl.className = "edit-link";
+  editEl.innerHTML = `<a href="${editUrl}" target="_blank">edit this page on github ↗</a>`;
+  footerMeta.appendChild(editEl);
+
+  // page size indicator
+  const entries = performance.getEntriesByType("resource");
+  const totalBytes = entries.reduce((sum, e) => sum + (e.transferSize || 0), 0);
+  if (totalBytes > 0) {
+    const kib = (totalBytes / 1024).toFixed(2);
+    const sizeEl = document.createElement("p");
+    sizeEl.className = "page-size";
+    sizeEl.textContent = `Page size: ${kib} KiB`;
+    footerMeta.appendChild(sizeEl);
+  }
+
+  main.appendChild(footerMeta);
+
   window.scrollTo(0, 0);
 }
 
