@@ -1,3 +1,17 @@
+// lazy-load heavy libs only when a page actually needs them
+const _loadedScripts = new Set();
+function loadScript(src) {
+  if (_loadedScripts.has(src)) return Promise.resolve();
+  return new Promise((resolve, reject) => {
+    const s = document.createElement("script");
+    s.src = src;
+    s.onload = () => { _loadedScripts.add(src); resolve(); };
+    s.onerror = reject;
+    document.head.appendChild(s);
+  });
+}
+let _mermaidReady = false;
+
 // configure marked with syntax highlighting and mermaid support
 const renderer = new marked.Renderer();
 let p5Queue = [];
@@ -36,8 +50,6 @@ renderer.heading = ({ text, depth }) => {
 };
 
 marked.use({ renderer });
-
-mermaid.initialize({ startOnLoad: false, theme: "neutral" });
 
 // add a "copy" button to each code block
 function addCopyButtons(container) {
@@ -148,6 +160,20 @@ async function loadPage(slug) {
   }
 
   const { data, content } = parseFrontMatter(await res.text());
+
+  // detect which heavy libs this page needs and load them in parallel
+  const needsHighlight = /^```/m.test(content);
+  const needsMermaid = /^```mermaid/m.test(content);
+  const needsP5 = /^```p5\.js/m.test(content);
+  const libLoads = [];
+  if (needsHighlight) libLoads.push(loadScript("lib/highlight.min.js"));
+  if (needsMermaid) libLoads.push(loadScript("lib/mermaid.min.js"));
+  if (needsP5) libLoads.push(loadScript("lib/p5.min.js"));
+  await Promise.all(libLoads);
+  if (needsMermaid && !_mermaidReady) {
+    mermaid.initialize({ startOnLoad: false, theme: "neutral" });
+    _mermaidReady = true;
+  }
 
   applyPageCSS(data.css || null);
   applyPageJS(data.js || null);
