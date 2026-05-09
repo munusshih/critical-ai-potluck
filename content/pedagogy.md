@@ -186,7 +186,7 @@ The simple, tripartite TILT Framework (purpose, tasks, criteria) serves to frame
 In [_Teaching to Transgress: Education as the Practice of Freedom_](https://sites.utexas.edu/lsjcs/files/2018/02/Teaching-to-Transgress_-Education-as-the-Practice-of-Freedom-bell-hooks.pdf) (1994), bell hooks argues that education should be a practice of freedom, not domination. She advocates for a pedagogy that is inclusive, participatory, and transformative, and emphasizes the importance of dialogue, critical thinking, and the recognition of students’ lived experiences:
 
 ```text
-The classroom remains the most radical space of possibility in the academy.
+To educate as the practice of freedom is a way of teaching that anyone can learn. That learning process comes easiest to those of us who teach who also believe that there is an aspect of our vocation that is sacred; who believe that our work is not merely to share information but to share in the intellectual and spiritual growth of our students. To teach in a manner that respects and cares for the souls of o ur students is essential if we are to provide the necessary conditions where learning can most deeply and intimately begin.
 (bell hooks, Teaching to Transgress, 1994)
 ```
 
