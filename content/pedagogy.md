@@ -264,14 +264,14 @@ There is something unspeakably sinister about a machine that does nothing, absol
   <figcaption><a href="https://dl.acm.org/doi/10.1145/365153.365168"><em>ELIZA: A Computer Program For the Study of Natural Language Communication</em></a> (Joseph Weizenbaum, 1966). Screenshot of the DOCTOR script via <a href="https://commons.wikimedia.org/wiki/File:ELIZA_conversation.png">Wikimedia Commons</a>.</figcaption>
 </figure>
 
-Conway’s Game of Life (1970, popularized in Martin Gardner’s _Scientific American_ column) as the simplest demonstration of complex behavior from simple rules.
+**Conway’s Game of Life** (1970, popularized in Martin Gardner’s _Scientific American_ column) as the simplest demonstration of complex behavior from simple rules.
 
 <figure>
   <img src="assets/pedagogy/glider-gun.gif" alt="Gosper's glider gun, an animated pattern in Conway's Game of Life">
   <figcaption>Gosper’s glider gun, from <a href="https://web.stanford.edu/class/sts145/Library/life.pdf"><em>Mathematical Games: The fantastic combinations of John Conway’s new solitaire game “Life”</em></a> (Martin Gardner, <em>Scientific American</em>, October 1970). Animation via <a href="https://commons.wikimedia.org/wiki/File:Gospers_glider_gun.gif">Wikimedia Commons</a>.</figcaption>
 </figure>
 
-Markov chains (Andrey Markov, early 1900s; used by Shannon in his foundational 1948 paper [_A Mathematical Theory of Communication_](https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf) to model English text) as the pre-history of language models.
+**Markov chains** (Andrey Markov, early 1900s; used by Shannon in his foundational 1948 paper [_A Mathematical Theory of Communication_](https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf) to model English text) as the pre-history of language models.
 
 #### Apply: data collection
 
@@ -291,7 +291,13 @@ I think there’s a huge opportunity missing in the current pedagogy of AI. If A
 
 Can we memorize not just through text, but through movement, experience, game, play, art, music? Can we learn through our bodies and our senses, not just through our minds?
 
-There’s a cognitive-science framework I want to name for this called **4E Cognition**: Embodied, Embedded, Enactive, Extended. The foundational text is [_The Embodied Mind: Cognitive Science and Human Experience_](https://mitpress.mit.edu/9780262529365/the-embodied-mind/) (Varela, Thompson & Rosch, 1991), with Andy Clark’s [_Supersizing the Mind_](https://global.oup.com/academic/product/supersizing-the-mind-9780199773688) (2008) extending the “extended” thread.
+There’s a cognitive-science framework I want to name for this called **4E Cognition**: Embodied, Embedded, Enactive, Extended. The foundational text is [_The Embodied Mind: Cognitive Science and Human Experience_](https://mitpress.mit.edu/9780262529365/the-embodied-mind/) (Varela, Thompson & Rosch, 1991).
+
+```text
+By using the term embodied we mean to highlight two points: first, that cognition depends upon the kinds of experience that come from having a body with various sensorimotor capacities, and second, that these individual sensorimotor capacities are themselves embedded in a more encompassing biological, psychological, and cultural context.
+
+(Varela, Thompson & Rosch, The Embodied Mind, 1991, Ch. 8)
+```
 
 It argues that cognition isn’t a _brain-in-a-vat_ processing symbols, but a full body in an environment, with tools, in relation to other bodies. If AI handles the disembodied text-and-symbol work, education has to over-index on what AI structurally can’t do: the physical, the sensory, the spatial, the place-based, the social.
 
