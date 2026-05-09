@@ -5,6 +5,8 @@ date: April 11, 2026
 author: Munus Shih
 ---
 
+![A board full of sticky notes](../assets/opening.png)
+
 ```p5.js
 
 let x, y;

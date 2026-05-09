@@ -5,7 +5,10 @@ function loadScript(src) {
   return new Promise((resolve, reject) => {
     const s = document.createElement("script");
     s.src = src;
-    s.onload = () => { _loadedScripts.add(src); resolve(); };
+    s.onload = () => {
+      _loadedScripts.add(src);
+      resolve();
+    };
     s.onerror = reject;
     document.head.appendChild(s);
   });
@@ -188,7 +191,9 @@ async function loadPage(slug) {
   main.innerHTML =
     headerHtml + (subHtml ? `<p>${subHtml}</p>` : "") + marked.parse(content);
   addCopyButtons(main);
-  await mermaid.run({ nodes: main.querySelectorAll(".mermaid") });
+  if (needsMermaid && window.mermaid) {
+    await mermaid.run({ nodes: main.querySelectorAll(".mermaid") });
+  }
   p5Queue.forEach(({ id, code }) => new p5(new Function("p", code), id));
 
   // page footer meta
