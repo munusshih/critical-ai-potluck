@@ -6,9 +6,10 @@ date: May 9, 2026
 author: Munus Shih
 ---
 
-- Participants: Munus Shih, Aarushi Bapna, Avneesh Sarwate, Tanvi Sharma, Matt Martin, Arden Schager, Matias Piña Aguilera
-- May 9, Saturday, 2:00–4:30pm
-- Outside on the lawn at Pratt. Rain plan: Steuben Hall, 4th floor.
+- Participants: Munus Shih, Aarushi Bapna, Avneesh Sarwate, Matt Martin, Arden Schager. May 9, Saturday, 2:00–4:30pm
+- Originally outside on the lawn at Pratt. Rain plan: Steuben Hall, 4th floor, walking around and discussed in different places.
+
+![](../assets/pedagogy/01.png)
 
 <audio controls preload="metadata" class="js-plyr">
   <source src="assets/pedagogy/why-your-brain-needs-friction-to-learn.mp3" type="audio/mpeg">
@@ -22,7 +23,7 @@ I intentionally created an AI-generated podcast version of the writing here with
 
 ## How this works
 
-I’ve been thinking a lot about pedagogy. There’s SO MUCH we can talk about! Pedagogy is not just about formal education but also how we learn in informal settings, how we teach ourselves, and how we share knowledge with each other.
+There’s SO MUCH we can talk about! Pedagogy is not just about formal education but also how we learn in informal settings, how we teach ourselves, and how we share knowledge with each other.
 
 I’d rather dive deep into a few things than skim everything, so I’ve prepared four talking points clustered around two big questions:
 
@@ -34,6 +35,8 @@ I want this to be a conversation, not a lecture. I’ll introduce each point bri
 ---
 
 ## How should we learn? How should we teach?
+
+[In a big conference room]
 
 ### How did we learn in school?
 
@@ -107,6 +110,8 @@ Or one could argue that AI tutors are the ultimate form of the banking model: th
 1. Sal Khan, [_Brave New Words: How AI Will Revolutionize (and Already Has) Education_](https://blogs.lse.ac.uk/impactofsocialsciences/2024/07/11/brave-new-words-how-ai-will-revolutionize-education-review/) (2024). The person who Khan Academy was very excited about suing AI as a Socratic tutor.
 2. BERA, [_Generative Artificial Intelligence and a Return to Dialogue in Education_](https://www.bera.ac.uk/blog/generative-artificial-intelligence-and-a-return-to-dialogue-in-education) (2024). Connects Socrates’ concerns about writing to AI’s potential to restore dynamic question-and-answer exchanges.
 3. [_We should talk more at school: Researchers call for more conversation-rich learning as AI spreads_](https://www.eurekalert.org/news-releases/1106127) (2025).
+
+[We walked and then sat in a small classroom]
 
 ### Friction in learning
 
@@ -186,7 +191,7 @@ The simple, tripartite TILT Framework (purpose, tasks, criteria) serves to frame
 In [_Teaching to Transgress: Education as the Practice of Freedom_](https://sites.utexas.edu/lsjcs/files/2018/02/Teaching-to-Transgress_-Education-as-the-Practice-of-Freedom-bell-hooks.pdf) (1994), bell hooks argues that education should be a practice of freedom, not domination. She advocates for a pedagogy that is inclusive, participatory, and transformative, and emphasizes the importance of dialogue, critical thinking, and the recognition of students’ lived experiences:
 
 ```text
-To educate as the practice of freedom is a way of teaching that anyone can learn. That learning process comes easiest to those of us who teach who also believe that there is an aspect of our vocation that is sacred; who believe that our work is not merely to share information but to share in the intellectual and spiritual growth of our students. To teach in a manner that respects and cares for the souls of o ur students is essential if we are to provide the necessary conditions where learning can most deeply and intimately begin.
+To educate as the practice of freedom is a way of teaching that anyone can learn. That learning process comes easiest to those of us who teach who also believe that there is an aspect of our vocation that is sacred; who believe that our work is not merely to share information but to share in the intellectual and spiritual growth of our students. To teach in a manner that respects and cares for the souls of our students is essential if we are to provide the necessary conditions where learning can most deeply and intimately begin.
 (bell hooks, Teaching to Transgress, 1994)
 ```
 
@@ -213,6 +218,8 @@ I’ve never been an activist before, but I feel so strongly about this: It is s
 ```
 
 ---
+
+[We walked and then sat in a sunny studio space]
 
 ## What should we learn? What should we teach?
 
@@ -302,6 +309,8 @@ By using the term embodied we mean to highlight two points: first, that cognitio
 It argues that cognition isn’t a _brain-in-a-vat_ processing symbols, but a full body in an environment, with tools, in relation to other bodies. If AI handles the disembodied text-and-symbol work, education has to over-index on what AI structurally can’t do: the physical, the sensory, the spatial, the place-based, the social.
 
 > Interestingly, **Brain in a vat** is a phrase from a famous philosophical thought experiment and often used to challenge Artificial Intelligence now.
+
+![](../assets/pedagogy/02.png)
 
 This is also why we’re sitting here inperson with printed papers and trying to walk around and write things, instead of doing this online with a shared Google Doc. I want our body to register the ideas we’re talking about, and to access different parts of our brain and memory than we would if we were just reading or typing.
 

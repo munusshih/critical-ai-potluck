@@ -71,6 +71,37 @@ function addCopyButtons(container) {
   });
 }
 
+// open external links in a new tab (with rel="noopener noreferrer" for safety)
+function markExternalLinks(container) {
+  const currentHost = window.location.hostname;
+  container.querySelectorAll("a[href]").forEach((a) => {
+    if (a.hasAttribute("target")) return;
+    const href = a.getAttribute("href");
+    if (!href) return;
+    if (
+      href.startsWith("#") ||
+      href.startsWith("/") ||
+      href.startsWith("./") ||
+      href.startsWith("../") ||
+      href.startsWith("mailto:") ||
+      href.startsWith("tel:") ||
+      href.startsWith("javascript:")
+    ) {
+      return;
+    }
+    let url;
+    try {
+      url = new URL(href, window.location.href);
+    } catch (e) {
+      return;
+    }
+    if (url.hostname && url.hostname !== currentHost) {
+      a.setAttribute("target", "_blank");
+      a.setAttribute("rel", "noopener noreferrer");
+    }
+  });
+}
+
 // parse YAML-lite front matter (--- key: value --- blocks)
 function parseFrontMatter(text) {
   const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/);
@@ -191,6 +222,7 @@ async function loadPage(slug) {
   main.innerHTML =
     headerHtml + (subHtml ? `<p>${subHtml}</p>` : "") + marked.parse(content);
   addCopyButtons(main);
+  markExternalLinks(main);
   if (needsMermaid && window.mermaid) {
     await mermaid.run({ nodes: main.querySelectorAll(".mermaid") });
   }
