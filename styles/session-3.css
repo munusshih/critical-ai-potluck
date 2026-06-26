@@ -1,0 +1,34 @@
+main {
+    max-width: 1200px;
+}
+
+.session-canvas-figure {
+    margin: 1.5em 0 0;
+}
+
+.session-canvas-object {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4442.173135583618 / 3324.634920861876;
+    min-height: 420px;
+    border: 1px solid var(--border);
+    background: #fff;
+}
+
+.session-canvas-figure figcaption {
+    margin-top: 0.6em;
+    font-size: 0.8em;
+    font-family: monospace;
+}
+
+@media (max-width: 900px) {
+    .session-canvas-object {
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 600px) {
+    .session-canvas-object {
+        min-height: 240px;
+    }
+}
